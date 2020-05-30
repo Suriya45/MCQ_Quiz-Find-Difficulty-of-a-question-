@@ -1,4 +1,3 @@
-package examly;
 public class Question {
 	public String ques,ans,diff;
 	int anscorrect;
