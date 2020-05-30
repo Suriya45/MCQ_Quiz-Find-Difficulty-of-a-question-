@@ -1,0 +1,70 @@
+                PSEUDOCODE
+              CLASS 1:  Main
+DEF main(String arg[])
+1)	INITIALIZE ten Strings (q1,q2,q3,q4,q5,q6,q7,q8,q9,q10)
+2)	INITIALIZE and ASSIGN value zero for total
+3)	ASSIGN the values for 10 Strings (q1,q2,q3,q4,q5,q6,q7,q8,q9,q10)
+4)	CREATE  new array of objects of size 10 for CLASS QUESTION by passing question and correct answer as parameter
+5)	GET the value of ‘total’ by CALL function readFile(questions,total) in CLASS evaluvation
+6)	CALL the function takeTest() in CLASS test
+7)	CALL the function writeFile(questions,total+1) in CLASS evaluvation
+
+            CLASS 2:  Question
+1)	INITIALIZE String ques,ans,diff
+2)	INITIALIZE anscorrect as int
+3)	INITIALIZE avg as float
+4)	DEF Question(String ques,String ans)
+•	SET this.ques=ques
+•	SET this.ans=ans
+•	SET diff=”Easy”
+5)	DEF update(int a)
+•	SET anscorrect=a
+6)	DEF  difficulty(int total)
+•	Avg=(anscorrect/total)
+•	IF avg>=0.75
+SET diff= “Easy”
+•	ELSE IF avg>=0.40
+SET diff= “Medium”
+•	ELSE
+SET diff= “Hard”
+      		      END IF
+
+
+
+              CLASS 3:  Test
+
+DEF  takeTest(Question[] questions)
+1)	INITIALIZE and ASSIGN value zero for score
+2)	ASSIGN the input as variable for Scanner Class object
+3)	INITIALIZE i=0
+4)	INITIALIZE answer as integer
+5)	FOR(i<questions.length;iNCREMENT i)
+4.1)  PRINT questions[i].que
+4.2)  PRINT questions[i].diff
+4.3)  GET input from user 
+4.4)  SET  answer=input
+4.5)  IF 	answer==questions[i].ans
+	4.5.1) INCREMENT score
+4.5.2) INCREMENT questions[i].anscorrect
+4.5.3) UPDATE the value of anscorrect
+END IF
+6)	PRINT score
+
+                CLASS 4:  Evaluation
+
+DEF1  readFile(Question[] q,int total)
+1)	INITIALIZE File file=new file(“data.txt”)
+2)	INITIALIZE Scanner sc=new Scanner(file);
+3)	SET i=0,k=0;
+4)	FOR(i=0;i<q.length;INCREMENT I)
+•	k=sc.nextInt()
+•	q[i].update(k)
+5)	SET total=sc.nextInt()
+6)	RETURN total
+
+DEF2  readFile(Question[] q,int total)
+1)	INITIALIZE FileWriter Writer= new FileWriter(“data.txt”)
+2)	INITIALIZE i=0
+3)	FOR (i=0;i<q.length;INCREMTN i)
+•	writer.write(q[i].anscorrect)
+4)	writer.write(total)
