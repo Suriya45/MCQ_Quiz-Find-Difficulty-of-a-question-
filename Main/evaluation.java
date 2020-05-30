@@ -1,4 +1,3 @@
-package examly;
 import java.io.*;
 import java.util.*;
 public class evaluation {
