@@ -1,0 +1,11 @@
+FORMULAS
+•	Avg=(anscorrect/total)
+•	IF avg>=0.75
+SET diff= “Easy”
+•	ELSE IF avg>=0.40
+SET diff= “Medium”
+•	ELSE
+SET diff= “Hard”
+      		      END IF
+
+
